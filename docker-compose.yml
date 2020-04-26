@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  web:
+    build: .
+    command: bash -c "python src/Api_Assign/manage.py makemigrations && python src/Api_Assign/manage.py migrate && python src/Api_Assign/manage.py runserver 0.0.0.0:8000"
+    container_name: app_cont
+    image: app_image
+    volumes:
+      - .:/app
+
+    ports:
+      - "8000:8000"
