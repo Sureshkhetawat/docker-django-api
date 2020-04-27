@@ -16,13 +16,17 @@ class idValidationAPIView(APIView):
 
     def post(self, request):
         data = request.data
+        # defining the field datatype for Id validaion
+
         serializer = IdSerializer(data = data)
+        # validation of the requested data 
 
         if serializer.is_valid():
             data = serializer.data
         else:
             return Response(serializer.errors,status=status.HTTP_400_BAD_REQUEST)
 
+        # extraction of data
         values = data['values']
         supported_values = data['supported_values']
         invalid_trigger = data['invalid_trigger']
@@ -32,6 +36,7 @@ class idValidationAPIView(APIView):
 
 
         try:
+            # validate_finite_values_entity function call
             result = validate_finite_values_entity(values,supported_values,invalid_trigger,key,support_multiple,pick_first)
         except Exception as error:
             print(error)

@@ -14,13 +14,16 @@ class ageValidationAPIView(APIView):
 
     def post(self, request):
         data = request.data
+        # defining the field datatype for age validaion
         serializer = AgeSerializer(data = data)
 
+        # validation of the requested data 
         if serializer.is_valid():
             data = serializer.data
         else:
             return Response(serializer.errors, status = status.HTTP_400_BAD_REQUEST)
 
+        # extraction of data
         values = data['values']
         constraint = data['constraint']
         invalid_trigger = data['invalid_trigger']+"_stated"
@@ -30,6 +33,7 @@ class ageValidationAPIView(APIView):
         support_multiple = data['support_multiple']
 
         try:
+            # validate_numeric_entity function call
             result = validate_numeric_entity(values, invalid_trigger, key,support_multiple, pick_first, constraint, var_name)
         except Exception as error:
             print(error)
