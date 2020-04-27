@@ -14,10 +14,13 @@
 
 ### Steps to build and run Docker App
 * Git clone this repo to your PC
-* Install docker-compose
+* Install docker-compose and to run Docker commands as a non-root user without prepending sudo you need to add your user to the docker group
+    > sudo usermod -aG docker $USER<br />
+    > newgrp docker
+
 * Build Docker image and Container
     > docker-compose up --build -d
-* if not build the use
+* if not build then use
     > sudo docker-compose up --build -d
 * Check created Docker Images & Container
     > docker ps -a <br />
@@ -29,11 +32,11 @@
 
 * Send request to api through:
 
-    > API for ID Validation
+    > API for ID Validation request <br />
         > http://127.0.0.1:8000/api_1/IdValidation/ 
         <br />
 
-    > API for Age Validation
+    > API for Age Validation request <br />
         > http://127.0.0.1:8000/api_2/AgeValidation/
 
 
