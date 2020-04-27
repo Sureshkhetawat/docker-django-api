@@ -30,7 +30,7 @@
 * Stop Docker App
     > docker stop slot_validator
 
-* Send request to api through:
+* API endpoints for post request:
 
     > API for ID Validation request <br />
         > http://127.0.0.1:8000/api_1/IdValidation/ 
