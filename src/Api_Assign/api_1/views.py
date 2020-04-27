@@ -11,8 +11,8 @@ from .IdSlotValidation import validate_finite_values_entity
 
 class idValidationAPIView(APIView):
 
-    def get(self, request):
-        return Response("Hello world")
+    # def get(self, request):
+    #     return Response("Hello world")
 
     def post(self, request):
         data = request.data

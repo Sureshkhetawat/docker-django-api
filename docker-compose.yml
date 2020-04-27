@@ -4,8 +4,8 @@ services:
   web:
     build: .
     command: bash -c "python src/Api_Assign/manage.py makemigrations && python src/Api_Assign/manage.py migrate && python src/Api_Assign/manage.py runserver 0.0.0.0:8000"
-    container_name: SlotvalidateApp
-    image: SlotvalidateApp_image
+    container_name: slot_validator
+    image: slot_validator_image
     volumes:
       - .:/app
 

@@ -1,7 +1,7 @@
 # Docker App
-* **Image Size** - 260MB
-* Image name - SlotvalidateApp_image
-* Conatiner name -SlotvalidateApp
+* **Image Size** - 221MB
+* Image name - slot_validator
+* Conatiner name - slot_validator_image
 
 
 ## Technologies used
@@ -12,17 +12,17 @@
 * Minor dependencies can be found in the requirements.txt file on the root folder.
 
 
-### Steps for build and run Docker App
+### Steps to build and run Docker App
 * Git clone this repo to your PC
 * Build Docker image and Container
     > docker-compose up --build -d
-* Check Docker Images & Container created
+* Check created Docker Images & Container
     > docker ps -a
     > docker images -a
 * Run Docker App
-    > docker start SlotvalidateApp
+    > docker start slot_validator
 * Stop Docker App
-    > docker stop SlotvalidateApp
+    > docker stop slot_validator
 
 
 

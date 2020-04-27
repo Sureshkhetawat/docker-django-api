@@ -16,17 +16,18 @@ def validate_finite_values_entity(values: List[Dict], supported_values: List[str
     :param key: Dict key to use in the params returned
     :return: a tuple of (filled, partially_filled, trigger, params)
     """
-
+    # no values given by request then return.
     if len(values)==0:
         return (False, False, invalid_trigger, {})
     
     parameters = {}
     parameters[key] = []
     for valuedict in values:
+        # check if value is in supported list
         if valuedict['value'] in supported_values:
             parameters[key].append(valuedict['value'].upper())
     
-    if len(values) == len(parameters[key]):
+    if len(values) == len(parameters[key]):     # if all values are valid
         filled = True
         partially_filled = False
         trigger = ""
@@ -36,16 +37,16 @@ def validate_finite_values_entity(values: List[Dict], supported_values: List[str
         if len(parameters[key])>0:     # subset of values are valid
             partially_filled = True
         else:
-            if len(values)>0:
+            if len(values)>0:           # when there are values
                 partially_filled = True
             else:
                 partially_filled = False
         parameters = {}
     
-    if pick_first==False and support_multiple==False:
+    if pick_first==False and support_multiple==False:       # both cannot be false
         raise Exception("Check testcase")
 
-    if pick_first==True:
+    if pick_first==True and len(parameters[key])>0:            # if pick first is true then take first element
         parameters[key] = parameters[key][0]
 
     return (filled, partially_filled, trigger, parameters)

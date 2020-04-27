@@ -9,8 +9,8 @@ from .AgeSlotValidation import validate_numeric_entity
 
 class ageValidationAPIView(APIView):
 
-    def get(self, request):
-        return Response("Hello World, This is age validation GET request")
+    # def get(self, request):
+    #     return Response("Hello World, This is age validation GET request")
 
     def post(self, request):
         data = request.data
