@@ -30,6 +30,7 @@ class idValidationAPIView(APIView):
         support_multiple = data['support_multiple']
         pick_first = data['pick_first']
 
+
         try:
             result = validate_finite_values_entity(values,supported_values,invalid_trigger,key,support_multiple,pick_first)
         except Exception as error:

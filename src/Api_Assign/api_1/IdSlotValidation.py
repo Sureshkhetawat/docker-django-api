@@ -45,7 +45,7 @@ def validate_finite_values_entity(values: List[Dict], supported_values: List[str
     if pick_first==False and support_multiple==False:
         raise Exception("Check testcase")
 
-    if pick_first==True or support_multiple==False:
+    if pick_first==True:
         parameters[key] = parameters[key][0]
 
     return (filled, partially_filled, trigger, parameters)

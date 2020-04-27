@@ -32,16 +32,13 @@ def validate_numeric_entity(values: List[Dict], invalid_trigger: str = None, key
     parameters = {}
     parameters[key] = []
 
-    print(parameters)
-
     constraint = constraint.replace(var_name,"{0}")
 
-    print(constraint)
+    print(type(values[0]['value']))
 
     for valuedict in values:
         if type(valuedict['value'])==int and eval(constraint.format(valuedict['value'])):
             parameters[key].append(valuedict['value'])
-            print(parameters)
 
     if len(values) == len(parameters[key]):
         filled = True
@@ -63,7 +60,7 @@ def validate_numeric_entity(values: List[Dict], invalid_trigger: str = None, key
         # print("Input format is wrong")
         raise Exception("Does not this request")
     
-    if pick_first==True or support_multiple==False:
+    if pick_first==True and len(parameters[key])>0:
         parameters[key] = parameters[key][0]
 
     return (filled, partially_filled, trigger, parameters)

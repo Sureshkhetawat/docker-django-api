@@ -23,7 +23,7 @@ class ageValidationAPIView(APIView):
 
         values = data['values']
         constraint = data['constraint']
-        invalid_trigger = data['invalid_trigger']
+        invalid_trigger = data['invalid_trigger']+"_stated"
         key = data['key']
         var_name = data['var_name']
         pick_first = data['pick_first']

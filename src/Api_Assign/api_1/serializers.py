@@ -1,7 +1,7 @@
 from rest_framework import serializers
 
 class IdSerializer(serializers.Serializer):
-    invalid_trigger = serializers.CharField(max_length = 100,required = True)
+    invalid_trigger = serializers.CharField(max_length = 100,required = True, allow_null = False)
     key = serializers.CharField(max_length = 100, required=True)
     name = serializers.CharField(max_length = 100,required=True)
     reuse = serializers.BooleanField(default=True,required=False)
