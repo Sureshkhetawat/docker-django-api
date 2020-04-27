@@ -40,6 +40,9 @@
         > http://127.0.0.1:8000/api_2/AgeValidation/
 
 
+* Assumption
+    > support_multiple and pick_first request attr both cannot be false simultaneously
+
 
 
 
