@@ -1,7 +1,7 @@
 # Docker App
 * **Image Size** - 221MB
-* Image name - slot_validator
-* Conatiner name - slot_validator_image
+* Image name - slot_validator_image
+* Conatiner name - slot_validator
 
 
 ## Technologies used
