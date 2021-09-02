@@ -7,7 +7,7 @@ from rest_framework.views import APIView
 from .serializers import IdSerializer
 from .IdSlotValidation import validate_finite_values_entity
 
-# Create your views here.
+# Views of API-1 are here
 
 class idValidationAPIView(APIView):
 
